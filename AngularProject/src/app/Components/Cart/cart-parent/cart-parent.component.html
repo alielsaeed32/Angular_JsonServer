@@ -1,0 +1,40 @@
+<!-- <a href="#" class="btn btn-primary btn-lg disabled" [routerLink]="" role="button" >Primary link</a> -->
+<br><h3> Select Category : </h3><hr>
+<div class="mb-3">
+    <select value="0" #selectCategory [(ngModel)]="selectedCatogaryID" class="mb-3">
+        <option *ngFor = "let cat of CatList" [value]="cat.id">{{cat.Name}}</option>
+    </select>
+</div>
+<div class="bg-light">
+    <app-cart-child [CatIDSelected] = "selectedCatogaryID" (TotalPriceChanged) = "onTotalPriceChanged($event)" (SendShoppingItems) = "ReciveShoppingItems($event)"></app-cart-child>  
+</div>
+
+<hr>
+
+<h2> Shopping Items </h2>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total Price</th>
+        <th scope="col">Total Price With Tax</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let pp of shoppingCartItems; let i =index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{pp.ProductName}}</td>
+        <td>{{pp.UnitPrice}}</td>
+        <td>{{pp.SelectedQuantity}}</td>
+        <td>{{pp.UnitPrice*pp.SelectedQuantity}}</td>
+        <td>{{(pp.UnitPrice*pp.SelectedQuantity)+(pp.UnitPrice*pp.SelectedQuantity)*.14}}</td>
+      </tr> 
+    </tbody>
+  </table>
+<label for="" class="form-label">Total Price</label>
+ <input type="text" id="" class="form-control" value="{{RecToatalPrice}}" > <br>
+<button class="btn btn-primary" (click)="confirm()">Confirm</button><br>
+

@@ -1,0 +1,102 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "Name": "Mobile",
+      "Quantity": 4,
+      "Price": 1200,
+      "Img": "https://picsum.photos/250/100",
+      "CateogryID": 1
+    },
+    {
+      "id": 2,
+      "Name": "Laptop",
+      "Quantity": 2,
+      "Price": 1200,
+      "Img": "https://picsum.photos/250/100",
+      "CateogryID": 1
+    },
+    {
+      "id": 3,
+      "Name": "HardDisk",
+      "Quantity": 2,
+      "Price": 400,
+      "Img": "https://picsum.photos/250/100",
+      "CateogryID": 2
+    },
+    {
+      "id": 4,
+      "Name": "HeadPhones",
+      "Quantity": 1,
+      "Price": 300,
+      "Img": "https://picsum.photos/250/100",
+      "CateogryID": 2
+    },
+    {
+      "id": 5,
+      "Name": "Taplet",
+      "Quantity": 7,
+      "Price": 100,
+      "Img": "https://picsum.photos/250/100",
+      "CateogryID": 3
+    },
+    {
+      "id": 6,
+      "Name": "PC",
+      "Quantity": 3,
+      "Price": 1000,
+      "Img": "https://picsum.photos/250/100",
+      "CateogryID": 3
+    },
+    {
+      "id": 7,
+      "Name": "SSD",
+      "Quantity": 5,
+      "Price": 400,
+      "Img": "https://picsum.photos/250/100",
+      "CateogryID": 2
+    },
+    {
+      "id": 8,
+      "Name": "Screen",
+      "Quantity": 5,
+      "Price": 1000,
+      "Img": "https://picsum.photos/250/100",
+      "CateogryID": 3
+    },
+    {
+      "id": 9,
+      "Name": "vivo",
+      "Price": 3000,
+      "Quantity": 5,
+      "Img": "https://picsum.photos/250/100",
+      "CateogryID": 1
+    },
+    {
+      "id": 11,
+      "Name": "testtest",
+      "Price": 1200,
+      "Quantity": 3,
+      "Img": "https://picsum.photos/250/100",
+      "CateogryID": 2
+    }
+  ],
+  "categories": [
+    {
+      "id": 0,
+      "Name": "All Categories "
+    },
+    {
+      "id": 1,
+      "Name": "Mobiles"
+    },
+    {
+      "id": 2,
+      "Name": "Laptops"
+    },
+    {
+      "id": 3,
+      "Name": "Other"
+    }
+  ]
+}

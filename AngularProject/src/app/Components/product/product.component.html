@@ -1,0 +1,66 @@
+  <h2>
+    <br><hr>
+    Store Name : {{ storeData.Name}}<br>
+    <img src="{{storeData.Logo}}" alt="logo"><br>
+    <h3>Categories : </h3>
+    <div class="mb-3" [hidden]="!isPurchased">
+        <select [(ngModel)]="selectedCatogary">
+            <option *ngFor = "let cat of Catogaries" [value]="cat.id">{{cat.Name}}</option>
+        </select>
+
+        <table class="table table-borderless">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Qunatity</th>
+        </tr>
+        <tr *ngFor ="let pro of ProductList" [ngStyle]="{'background-color':(pro.Quantity==1)? 'yellow': 'white'}">
+            <td *ngIf="pro.CateogryID == selectedCatogary"><div *ngIf="pro.Quantity>0">{{pro.id}}</div></td>
+            <td *ngIf="pro.CateogryID == selectedCatogary"><div *ngIf="pro.Quantity>0">{{pro.Name}}</div></td>
+            <td *ngIf="pro.CateogryID == selectedCatogary"><div *ngIf="pro.Quantity>0">{{pro.Quantity}}</div></td>
+            <td *ngIf="pro.CateogryID == selectedCatogary"><div *ngIf="pro.Quantity>0">{{pro.Price}}</div></td>
+            <td *ngIf="pro.CateogryID == selectedCatogary"><div *ngIf="pro.Quantity>0"><img [src] = "pro.Img"></div></td>
+            <td *ngIf="pro.CateogryID == selectedCatogary"><div *ngIf="pro.Quantity>0"><button class="btn btn-primary" (click)="DecQuantity(pro.Quantity)">DecQuantity</button></div></td>
+            
+          </tr>
+        </table>
+    </div>
+    <div [hidden]="!isDiv">
+      <h3>Thanks for purchasing from our Store ya {{ClientName}} </h3>
+    </div>
+    <button class="btn btn-primary" (click)="showTable()">Bay</button>
+    <div class="mb-3">
+      <label for="" class="form-label">Enter your Name:</label>
+      <input type="text" [(ngModel)]="ClientName" class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+  </div>
+  </h2>
+  <h1>-----------------------------------------------------------</h1>
+  <div class="card" style="width: 18rem;">
+    <img [src]="OneProduct.Img" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title" appShadow>{{OneProduct.Name}}</h5>
+      <p class="card-text" appShadow>Quantity : {{OneProduct.Quantity}}</p>
+      <p class="card-text" appShadow>Price : {{OneProduct.Price}}</p>
+      <a href="#" class="btn btn-primary">Add Too Card</a>
+    </div>
+  </div>
+
+  <hr><br>
+  <div class="card" style="width: 18rem; float: left;padding: 6px;margin: 15px;" *ngFor ="let p of ProductList" >
+    <img [src]="p.Img" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title" appShadow>{{p.Name}}</h5>
+      <p class="card-text" appShadow>Quantity : {{p.Quantity}} </p>
+      <p class="card-text" appShadow>Price : {{p.Price | currency:'USD':'symbol'}}</p>
+      <p class="card-text" appShadow>Purchaced Date : {{PurDate |date:'short'}}</p>
+      <a href="#" class="btn btn-primary">Add Too Card</a>
+    </div>
+  </div>
+
+  <h3>Pipe For EgypID :</h3>
+  <h5> {{NationalID | eyptianID }}</h5>
+  <h3>Pipe For CreidtCard :</h3>
+  <h5> {{CreidtCard | creidtCard }}</h5>

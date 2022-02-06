@@ -1,0 +1,42 @@
+<!-- <a href="#" class="btn btn-primary" [routerLink]="['/addProduct']" role="button">ADD Product</a> -->
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Details</th>
+        <!-- <th scope="col">Images</th> -->
+        <!-- <th scope="col">Needed Quantity</th> -->
+        <th scope="col">Select Items</th>
+        <th scope="col">Buy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let item of  ProductListForSelCat; let i =index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{item.Name}}</td>
+        <td>{{item.Price}}</td>
+        <td>{{item.Quantity}}</td>
+        <td><button class="btn btn-primary" (click)="goProductDetails(item.id)">details</button></td>
+        <!-- <td><img [src] = "item.Img"></td> -->
+        <!-- <td><input type="number" class="form-control" [(ngModel)]="countItems" #count></td>
+         <td> <p [(ngModel)]="countItems" #count>{{0}}</p></td> 
+        <td>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary" (click)="increaseCount(p.ID,p.Name,p.Price,p.Quantity)">+</button>
+                <button type="button" class="btn btn-primary" (click) = "decreaseCount(count.value,p.ID)" >-</button>
+              </div>
+        </td> -->
+        <td><button (click)="increaseCount(quantity,item)" class="btn btn-primary">+
+
+        </button><input #quantity min="0"  type="number">
+        <button (click)="decreaseCount(quantity,item)" class="btn btn-primary">-
+
+        </button></td>
+        <td><button class="btn btn-primary" (click)="calcTotalPrice(item.Price,quantity.value)">Buy</button></td>
+      </tr>
+
+    </tbody>
+  </table>
